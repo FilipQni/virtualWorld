@@ -1,4 +1,4 @@
-# VirtualWorld APP
+# VirtualWorld APP (university task)
 
 Simple virtual world simulator based on the turn-based system where a user can perform turns and watch how the environment is changing. There are two types of organisms:
 plants and animals. Each kind of animal has it's own additional behaviour, each kind of plant provides another effect after being eaten. User can perform a turn,
