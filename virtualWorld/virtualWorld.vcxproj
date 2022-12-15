@@ -135,36 +135,36 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Animal.cpp" />
+    <ClCompile Include="Animals\Animal.cpp" />
+    <ClCompile Include="Animals\Dog.cpp" />
+    <ClCompile Include="Animals\Fox.cpp" />
+    <ClCompile Include="Animals\Sheep.cpp" />
+    <ClCompile Include="Animals\Sloth.cpp" />
+    <ClCompile Include="Animals\Wolf.cpp" />
     <ClCompile Include="App.cpp" />
-    <ClCompile Include="Coca.cpp" />
-    <ClCompile Include="Dog.cpp" />
-    <ClCompile Include="Fox.cpp" />
-    <ClCompile Include="Grass.cpp" />
-    <ClCompile Include="Guarana.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MainFrame.cpp" />
     <ClCompile Include="Organism.cpp" />
-    <ClCompile Include="Plant.cpp" />
-    <ClCompile Include="Sheep.cpp" />
-    <ClCompile Include="Sloth.cpp" />
-    <ClCompile Include="Wolf.cpp" />
+    <ClCompile Include="Plants\Coca.cpp" />
+    <ClCompile Include="Plants\Grass.cpp" />
+    <ClCompile Include="Plants\Guarana.cpp" />
+    <ClCompile Include="Plants\Plant.cpp" />
     <ClCompile Include="World.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Animal.h" />
+    <ClInclude Include="Animals\Animal.h" />
+    <ClInclude Include="Animals\Dog.h" />
+    <ClInclude Include="Animals\Fox.h" />
+    <ClInclude Include="Animals\Sheep.h" />
+    <ClInclude Include="Animals\Sloth.h" />
+    <ClInclude Include="Animals\Wolf.h" />
     <ClInclude Include="App.h" />
-    <ClInclude Include="Coca.h" />
-    <ClInclude Include="Dog.h" />
-    <ClInclude Include="Fox.h" />
-    <ClInclude Include="Grass.h" />
-    <ClInclude Include="Guarana.h" />
     <ClInclude Include="MainFrame.h" />
     <ClInclude Include="Organism.h" />
-    <ClInclude Include="Plant.h" />
-    <ClInclude Include="Sheep.h" />
-    <ClInclude Include="Sloth.h" />
-    <ClInclude Include="Wolf.h" />
+    <ClInclude Include="Plants\Coca.h" />
+    <ClInclude Include="Plants\Grass.h" />
+    <ClInclude Include="Plants\Guarana.h" />
+    <ClInclude Include="Plants\Plant.h" />
     <ClInclude Include="World.h" />
   </ItemGroup>
   <ItemGroup>

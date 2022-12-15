@@ -2,14 +2,14 @@
 #include <vector>
 #include <fstream>
 #include "Organism.h"
-#include "Wolf.h"
-#include "Sheep.h"
-#include "Fox.h"
-#include "Sloth.h"
-#include "Dog.h"
-#include "Grass.h"
-#include "Coca.h"
-#include "Guarana.h"
+#include "Animals\Wolf.h"
+#include "Animals\Sheep.h"
+#include "Animals\Fox.h"
+#include "Animals\Sloth.h"
+#include "Animals\Dog.h"
+#include "Plants\Grass.h"
+#include "Plants\Coca.h"
+#include "Plants\Guarana.h"
 
 using namespace std;
 

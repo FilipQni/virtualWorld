@@ -1,28 +1,25 @@
-#include "Fox.h"
-#include "World.h"
+#include "Animal.h"
+#include "../World.h"
 
-Fox::Fox(World& ref)
-	:Animal(ref, 3, 7, 0, 'F', "Fox",true, true, false)
+Animal::Animal(World& wordReference_, int strength_, int agility_, int age_, char symbol_, string name_, bool isAlive_, bool didMove_, bool extraTurn_)
+	:Organism(wordReference_, strength_, agility_, age_, symbol_, name_, isAlive_, didMove_, extraTurn_)
 {
 }
 
-Fox::Fox(World& ref, int strength_, int agility_, int age_, char symbol_, string name_, bool isAlive_, bool didMove_, bool extraMove_)
-	: Animal(ref, strength_, agility_, age_, symbol_, name_, isAlive_, didMove_, extraMove_)
-{
-}
-
-void Fox::action()
+void Animal::action()
 {
 	PositionStruct nextPosition = drawNextPosition(positionX, positionY);
-	
+
 	//empty field
 	if (worldReference.isFieldEmpty(nextPosition)) {
 		worldReference.clearField(positionX, positionY);
 		worldReference.moveAnimalToAnotherField(this, nextPosition);
 		setPositionX(nextPosition.positionX);
 		setPositionY(nextPosition.positionY);
+		setDidMove(true);
 	}
 	else {
+		string actionLog;
 
 		//if there is the same type of the unit
 		if (symbol == worldReference.getSymbolFromOccupiedField(nextPosition)) {
@@ -31,8 +28,6 @@ void Fox::action()
 			}
 		}
 		else {
-			string actionLog;
-
 			//if there is a weaker unit
 			if (strength >= worldReference.getStrenghFromOccupiedField(nextPosition)) {
 				if (worldReference.getSymbolFromOccupiedField(nextPosition) == 'C') setExtraMove(true);
@@ -52,31 +47,43 @@ void Fox::action()
 				worldReference.addToTurnLog(actionLog);
 				worldReference.moveAnimalToAnotherField(this, nextPosition);
 			}
-			//there is a stronger unit fox does not move
+			//there is a stronger unit
 			if (strength < worldReference.getStrenghFromOccupiedField(nextPosition)) {
+				setIsAlive(false);
 				actionLog =
 					+"A "
 					+ getName()
-					+ " avoided death from the "
+					+ " died from the "
 					+ worldReference.getNameFromOccupiedField(nextPosition)
 					+ " at ("
 					+ std::to_string(nextPosition.positionX + 1)
 					+ ","
 					+ std::to_string(nextPosition.positionY + 1)
 					+ ")";
+				worldReference.clearField(nextPosition.positionX, nextPosition.positionY);
 				worldReference.addToTurnLog(actionLog);
 			}
 		}
 	}
 	setDidMove(true);
+	setAge(age + 1);
 }
 
-Organism* Fox::getClass()
+void Animal::collision(PositionStruct& nextPosition)
 {
-	Organism* org = new Fox(worldReference);
-	return org;
+	string actionLog;
+	worldReference.createNewOrganism(this, nextPosition);
+	actionLog =
+		+"A "
+		+ getName()
+		+ " was born at "
+		+ std::to_string(nextPosition.positionX + 1)
+		+ ","
+		+ std::to_string(nextPosition.positionY + 1)
+		+ ")";
+	worldReference.addToTurnLog(actionLog);
 }
 
-Fox::~Fox()
+Animal::~Animal()
 {
 }

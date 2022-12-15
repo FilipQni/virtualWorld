@@ -1,5 +1,5 @@
 #include "Plant.h"
-#include "World.h"
+#include "../World.h"
 
 Plant::Plant(World& wordReference_, int strength_, int agility_, int age_, char symbol_, string name_, bool isAlive_, bool didMove_, bool extraTurn_)
 	:Organism(wordReference_, strength_, agility_, age_, symbol_, name_, isAlive_, didMove_, extraTurn_)
