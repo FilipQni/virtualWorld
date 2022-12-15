@@ -1,7 +1,7 @@
 #include "Coca.h"
 
 Coca::Coca(World& ref)
-	:Plant(ref, 0, 0, 0, 'C', "Coce", true, true, false)
+	:Plant(ref, 0, 0, 0, 'C', "Coca", true, true, false)
 {
 }
 
